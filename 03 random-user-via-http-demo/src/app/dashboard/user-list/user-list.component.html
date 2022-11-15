@@ -1,0 +1,15 @@
+<div>User list</div>
+<div>
+    <table>
+        <thead>
+            <tr><th>title</th><th>firstname</th><th>lastname</th></tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let person of persons">
+                <td>{{person.name.title}}</td>
+                <td>{{person.name.first}}</td>
+                <td>{{person.name.last}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
