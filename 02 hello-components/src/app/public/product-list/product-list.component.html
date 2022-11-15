@@ -1,0 +1,26 @@
+
+<div class="component">
+    <p>product-list</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="tableRow" *ngFor="let product of productService.getProducts()">
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price | currency : "EUR" : "symbol" }}</td>
+                <!-- <td><button (click)="onButtonDetailClick()">Detail</button></td> -->
+                <td><button routerLink="/products/{{ product.id }}">Detail</button></td>
+                <td><a [routerLink]="['/products',product.id]">Details</a></td>
+                <td><a href="/products/{{ product.id }}">Detail via href</a></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
